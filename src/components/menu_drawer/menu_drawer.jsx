@@ -101,6 +101,7 @@ const getMenus = () => [
       {
         key: 'Warehouses',
         label: 'Warehouses',
+        img : '../../',
       },
       {
         key: 'deployHosting',

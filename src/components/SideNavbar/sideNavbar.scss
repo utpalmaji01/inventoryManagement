@@ -1,3 +1,88 @@
-.side-navbar{
-    margin: 52px 0 0;
-}
+@import "../../commonStyle/colors";
+@import "../../commonStyle/breakpoints";
+// .side-navbar{
+//     margin: 52px 0 0;
+// }
+
+.MuiDrawer-paperAnchorDockedLeft {
+    margin-top: 51px;
+    padding-top: 5px;
+    @media screen and (max-width: $medium) {
+      margin-top: 0;
+      
+    }
+  }
+  
+  .MuiDrawer-paperAnchorDockedLeft {
+    border-right: none !important;
+  }
+  
+  
+  .sideNav:hover .MuiDrawer-paperAnchorDockedLeft {
+    border-right: 1px solid  black !important;
+  }
+  
+  .sideNav-active .MuiDrawer-paperAnchorDockedLeft {
+    border-right: 1px solid  black !important;
+    // @media screen and (max-width: $break-xsmall) {
+    //   border-right: none !important;
+    // }
+  }
+  
+  .sideNav:hover .list-min {
+    display: block;
+  }
+  
+  .MuiDrawer-paper {
+    @media screen and (max-width: $medium) {
+      margin-top: 51px;
+      // position: static !important;
+      // height: fit-content !important;
+    }
+  }
+  
+  .sideNav-list{
+    padding-top: 0 !important;
+  }
+  
+  
+  .sidenav-icon {
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .sidenav-icon.sidenav-icon-active {
+    background-color:  aqua;
+  }
+  
+  .MuiListItemIcon-root {
+    min-width: 40px !important;
+  }
+  
+  .list-item {
+    height: 50px !important;
+    padding: 0 20px !important;
+    border-radius: 0 50px 50px 0 !important;
+    &:hover {
+      background-color: aqua !important;
+    }
+  }
+  
+  .list-item.list-item-active {
+    background-color: aqua !important;
+  }
+  
+  .listItemText {
+    margin-left: 10px;
+    width: 150px !important;
+    @media screen and (max-width: $medium) {
+      width: 202px !important;
+    }
+  }
+  
+  .list-min {
+    display: none;
+  }

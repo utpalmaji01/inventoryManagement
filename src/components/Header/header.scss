@@ -1,0 +1,13 @@
+@import "../../commonStyle/colors";
+.header-container {
+  .header-toolbar {
+    .menu-button {
+      color: $button-primary;
+    }
+    .company-logo{
+        width: 30px;
+        padding: 5px;
+        margin: 0 5px;
+    }
+  }
+}

@@ -4,7 +4,9 @@ import "./dashBoard.scss";
 const DashBoard = () => {
   return (
     <div className="dashboard-container">
-      <div className="dashboard-header"></div>
+      <div className="dashboard-header">
+          <Header />
+      </div>
       <div className="dashboard-body">
         <div className="dashboard-sideNav"></div>
         <div className="dashboard-details"></div>

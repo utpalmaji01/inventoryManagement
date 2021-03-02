@@ -1,0 +1,15 @@
+@import "../../commonStyle/colors";
+@import "../../commonStyle/breakpoints";
+.globalsearch-bar {
+  background-color: $color-white;
+  margin: 6px 10px !important;
+  border-radius: 10px;
+  @media screen and (max-width: $xsmall) {
+    width: 40%;
+  }
+  .search-icon {
+    @media screen and (max-width: $xsmall) {
+      display: none;
+    }
+  }
+}

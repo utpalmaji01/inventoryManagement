@@ -1,13 +1,27 @@
 @import "../../commonStyle/colors";
+@import "../../commonStyle/breakpoints";
 .header-container {
+  background-color: $color-primary !important;
   .header-toolbar {
+    padding: 0 10px;
     .menu-button {
-      color: $button-primary;
+      .menu-icon {
+        color: #fff;
+      }
     }
-    .company-logo{
-        width: 30px;
-        padding: 5px;
-        margin: 0 5px;
+    .company-logo {
+      width: 30px;
+      padding: 5px;
+      margin: 0 5px;
+      @media screen and (max-width: $medium) {
+        display: none;
+      }
+    }
+    .company-name {
+      margin: 0 20px 0 0;
+      @media screen and (max-width: $xsmall) {
+        display: none;
+      }
     }
   }
 }

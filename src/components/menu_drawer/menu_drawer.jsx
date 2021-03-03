@@ -222,6 +222,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Bill Sundries")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Bill Sundries",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -245,6 +246,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Brands")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Brands",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -268,6 +270,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Category")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Category",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -290,6 +293,7 @@ export default function NestedList(props) {
             buttononClick={(e) => props.setSelectedMenu(e, "Cities")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Cities",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -313,6 +317,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Countries")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Countries",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -336,6 +341,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Currencies")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Currencies",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -359,6 +365,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "GST Treatments")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "GST Treatments",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -382,6 +389,7 @@ export default function NestedList(props) {
             conClick={(e) => props.setSelectedMenu(e, "Item Groups")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Item Groups",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -405,6 +413,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Manufacturers")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Manufacturers",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -428,6 +437,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Payment Terms")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Payment Terms",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -451,6 +461,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Salutations")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Salutations",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -474,6 +485,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "States")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "States",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -497,6 +509,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Taxes")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Taxes",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -520,6 +533,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Tax Preference")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Tax Preference",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -543,6 +557,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Units")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Units",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -566,6 +581,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Voucher Types")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Voucher Types",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -589,6 +605,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Warehouses")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Warehouses",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -698,6 +715,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Purchase Refund")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Purchase Refund",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -721,6 +739,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Purchase Payment")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Purchase Payment",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -745,6 +764,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Sales Recipt")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Sales Recipt",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -768,6 +788,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Sales Refund")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Sales Refund",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -831,6 +852,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Delivery Note")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Delivery Note",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -854,6 +876,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Indent Order")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Indent Order",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -877,6 +900,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Purchase Invoice")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Purchase Invoice",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -901,6 +925,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Purchase Order")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Purchase Order",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -924,6 +949,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Purchase Return")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Purchase Return",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -947,6 +973,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Recipt Note")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Recipt Note",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -970,6 +997,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Sales Invoice")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Sales Invoice",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -993,6 +1021,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Sales Order")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Sales Order",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -1016,6 +1045,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Sales Return")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Sales Return",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon
@@ -1039,6 +1069,7 @@ export default function NestedList(props) {
             onClick={(e) => props.setSelectedMenu(e, "Stock Transfer")}
             className={clsx(classes.nested, "list-item", {
               "list-item-active": props.selectedMenu === "Stock Transfer",
+              "sub-list-item-active": !props.isDrawerMin,
             })}
           >
             <ListItemIcon

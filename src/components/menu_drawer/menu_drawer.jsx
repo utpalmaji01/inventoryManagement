@@ -41,6 +41,14 @@ import RestorePageIcon from '@material-ui/icons/RestorePage';
 import ReceiptIcon from '@material-ui/icons/Receipt';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
+import SubjectIcon from '@material-ui/icons/Subject';
+import DvrIcon from '@material-ui/icons/Dvr';
+import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
+import NoteIcon from '@material-ui/icons/Note';
+import DescriptionIcon from '@material-ui/icons/Description';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import UndoIcon from '@material-ui/icons/Undo';
+import TransformIcon from '@material-ui/icons/Transform';
 import './menu_drawer.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -56,9 +64,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NestedList() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-  const [openTrans, setOpenTrans] = React.useState(true);
-  const [openVoucher, setOpenVoucher] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const [openTrans, setOpenTrans] = React.useState(false);
+  const [openVoucher, setOpenVoucher] = React.useState(false);
 
 
   const handleClick = () => {
@@ -290,15 +298,51 @@ export default function NestedList() {
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <ViewHeadlineIcon />
+              <SubjectIcon />
             </ListItemIcon>
             <ListItemText primary="Purchase Invoice" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <RestorePageIcon />
+              <DvrIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Refund" />
+            <ListItemText primary="Purchase Order" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <AssignmentReturnIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Return" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NoteIcon />
+            </ListItemIcon>
+            <ListItemText primary="Recipt Note" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <DescriptionIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Invoice" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Order" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <UndoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Return" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <TransformIcon />
+            </ListItemIcon>
+            <ListItemText primary="Stock Transfer" />
           </ListItem>
           </List>
           </Collapse>

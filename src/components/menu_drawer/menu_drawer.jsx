@@ -1,190 +1,305 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
-import { useMaterialNestedMenuStyles } from '@mui-treasury/styles/nestedMenu/material';
-import NestedMenu from '@mui-treasury/components/menu/nested';
+import { makeStyles } from '@material-ui/core/styles';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import PersonIcon from '@material-ui/icons/Person';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import NewReleasesIcon from '@material-ui/icons/NewReleases';
+import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
+import CategoryIcon from '@material-ui/icons/Category';
+import LocationCityIcon from '@material-ui/icons/LocationCity';
+import LanguageIcon from '@material-ui/icons/Language';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import ScoreIcon from '@material-ui/icons/Score';
+import StyleIcon from '@material-ui/icons/Style';
+import WcIcon from '@material-ui/icons/Wc';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import LocalAtmIcon from '@material-ui/icons/LocalAtm';
+import BuildIcon from '@material-ui/icons/Build';
+import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
+import HomeIcon from '@material-ui/icons/Home';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import PeopleIcon from '@material-ui/icons/People';
+import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
+import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import TocIcon from '@material-ui/icons/Toc';
+import RestorePageIcon from '@material-ui/icons/RestorePage';
+
 import './menu_drawer.scss';
 
-const MaterialNestedMenuStyle = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+}));
+
+export default function NestedList() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(true);
+  const [openTrans, setOpenTrans] = React.useState(true);
+  const [openVoucher, setOpenVoucher] = React.useState(true);
+
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+  const handleClickTrans = () => {
+    setOpenTrans(!openTrans);
+  };
+  const handleClickVoucher = () => {
+    setOpenVoucher(!openVoucher);
+  };
+
   return (
-    <Box minWidth={200} className="side-drawer">
-      <NestedMenu menus={getMenus()} useStyles={useMaterialNestedMenuStyles} />
-    </Box>
+    <List
+      component="nav"
+      aria-labelledby="nested-list-subheader"
+      // subheader={
+      //   <ListSubheader component="div" id="nested-list-subheader">
+      //     Nested List Items
+      //   </ListSubheader>
+      // }
+      className={classes.root}
+      id="menuItem"
+    >
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText primary="Dashboard" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <PersonIcon />
+        </ListItemIcon>
+        <ListItemText primary="Customers" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <ContactsIcon />
+        </ListItemIcon>
+        <ListItemText primary="Vendors" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <ShoppingBasketIcon />
+        </ListItemIcon>
+        <ListItemText primary="Items" />
+      </ListItem>
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <AccountBalanceWalletIcon />
+        </ListItemIcon>
+        <ListItemText primary="Masters" />
+        {open ? <ExpandMore /> : <NavigateNextIcon /> }
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NewReleasesIcon />
+            </ListItemIcon>
+            <ListItemText primary="Bill Sundries" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <BrandingWatermarkIcon />
+            </ListItemIcon>
+            <ListItemText primary="Brands" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <CategoryIcon />
+            </ListItemIcon>
+            <ListItemText primary="Category" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <LocationCityIcon />
+            </ListItemIcon>
+            <ListItemText primary="Cities" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <LanguageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Countries" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <AttachMoneyIcon />
+            </ListItemIcon>
+            <ListItemText primary="Currencies" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <ScoreIcon />
+            </ListItemIcon>
+            <ListItemText primary="GST Treatments" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <FileCopyIcon />
+            </ListItemIcon>
+            <ListItemText primary="Item Groups" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <GroupAddIcon />
+            </ListItemIcon>
+            <ListItemText primary="Manufacturers" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StyleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Payment Terms" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <WcIcon />
+            </ListItemIcon>
+            <ListItemText primary="Salutations" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <LocationOnIcon />
+            </ListItemIcon>
+            <ListItemText primary="States" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <TimelineIcon />
+            </ListItemIcon>
+            <ListItemText primary="Taxes" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <LocalAtmIcon />
+            </ListItemIcon>
+            <ListItemText primary="Tax Preference" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <BuildIcon />
+            </ListItemIcon>
+            <ListItemText primary="Units" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <CollectionsBookmarkIcon />
+            </ListItemIcon>
+            <ListItemText primary="Voucher Types" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Warehouses" />
+          </ListItem>
+        </List>
+      </Collapse>
+      <ListItem button>
+        <ListItemIcon>
+          <AccountBalanceIcon />
+        </ListItemIcon>
+        <ListItemText primary="Organizations" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <PeopleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Users" />
+      </ListItem>
+      <ListItem button onClick={handleClickTrans}>
+        <ListItemIcon>
+          <SwapHorizIcon />
+        </ListItemIcon>
+        <ListItemText primary="Transactions" />
+        {openTrans ? <ExpandMore /> : <NavigateNextIcon /> }
+      </ListItem>
+      <Collapse in={openTrans} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <AssignmentReturnedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Refund" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <CreditCardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Payment" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <TocIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Recipt" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <RestorePageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Refund" />
+          </ListItem>
+          </List>
+          </Collapse>
+          <ListItem button onClick={handleClickVoucher}>
+        <ListItemIcon>
+          <SwapHorizIcon />
+        </ListItemIcon>
+        <ListItemText primary="Transactions" />
+        {openVoucher ? <ExpandMore /> : <NavigateNextIcon /> }
+      </ListItem>
+      <Collapse in={openVoucher} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <AssignmentReturnedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Refund" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <CreditCardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Payment" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <TocIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Recipt" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <RestorePageIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sales Refund" />
+          </ListItem>
+          </List>
+          </Collapse>
+    </List>
   );
-};
-
-const getMenus = () => [
-  {
-    key: 'dashboard',
-    label: 'Dashboard',
-  },
-  {
-    key: 'customers',
-    label: 'Customers',
-  },
-  {
-    key: 'vendors',
-    label: 'Vendors',
-  },
-  {
-    key: 'items',
-    label: 'Items',
-  },
-  {
-    key: 'masters',
-    label: 'Masters',
-    isToggleOutside: true,
-    subMenus: [
-      {
-        key: 'billSundries',
-        label: 'Bill Sundries',
-      },
-      {
-        key: 'Brands',
-        label: 'Brands',
-      },
-      {
-        key: 'Catagories',
-        label: 'Catagories',
-      },
-      {
-        key: 'Cities',
-        label: 'Cities',
-      },
-      {
-        key: 'Countries',
-        label: 'Countries',
-      },
-      {
-        key: 'Currencies',
-        label: 'Currencies',
-      },
-      {
-        key: 'GST Treatments',
-        label: 'GST Treatments',
-      },
-      {
-        key: 'Item Groups',
-        label: 'Item Groups',
-      },
-      {
-        key: 'Manufactures',
-        label: 'Manufactures',
-      },
-      {
-        key: 'Payment Terms',
-        label: 'Payment Terms',
-      },
-      {
-        key: 'Salutations',
-        label: 'Salutations',
-      },
-      {
-        key: 'States',
-        label: 'States',
-      },
-      {
-        key: 'Taxes',
-        label: 'Taxes',
-      },
-      {
-        key: 'Tax Preferences',
-        label: 'Tax Preferences',
-      },
-      {
-        key: 'Units',
-        label: 'Units',
-      },
-      {
-        key: 'Voucher Types',
-        label: 'Voucher Types',
-      },
-      {
-        key: 'Warehouses',
-        label: 'Warehouses',
-        img : '../../',
-      },
-      {
-        key: 'deployHosting',
-        label: 'Deploying & Hosting',
-        subMenus: [
-          {
-            key: 'preparing',
-            label: 'Preparing a Site for Deployment',
-          },
-          {
-            key: 'awsAmplify',
-            label: 'Deploying to AWS Amplify',
-          },
-          {
-            key: 'awsS3',
-            label: 'Deploying to S3 and CloudFront',
-          },
-        ],
-      },
-      {
-        key: 'customConfig',
-        label: 'Custom Configuration',
-        subMenus: [
-          {
-            key: 'babeljs',
-            label: 'Customizing Babel.js Config',
-          },
-          {
-            key: 'babelPluginMacro',
-            label: 'Using Babel Plugin Macros',
-          },
-          {
-            key: 'customWebpack',
-            label: 'Adding a Custom Webpack Config',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: 'api',
-    label: 'Gatsby API',
-    subMenus: [
-      {
-        key: 'themes',
-        label: 'Gatsby Themes',
-      },
-      {
-        key: 'link',
-        label: 'Gatsby Link',
-      },
-      {
-        key: 'image',
-        label: 'Gatsby Image',
-      },
-      {
-        key: 'config',
-        label: 'Gatsby Config',
-      },
-    ],
-  },
-  {
-    key: 'migration',
-    label: 'Releases & Migration',
-    subMenus: [
-      {
-        key: 'v2',
-        label: 'v2 Release Notes',
-      },
-      {
-        key: 'v1',
-        label: 'v1 Release Notes',
-      },
-      {
-        key: 'v1Tov2',
-        label: 'Migration from v1 to v2',
-      },
-      {
-        key: 'v0Tov1',
-        label: 'Migration from v0 to v1',
-      },
-    ],
-  },
-];
-
-export default MaterialNestedMenuStyle;
+}

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ListSubheader from "@material-ui/core/ListSubheader";
@@ -42,62 +41,16 @@ import RestorePageIcon from "@material-ui/icons/RestorePage";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ViewHeadlineIcon from "@material-ui/icons/ViewHeadline";
-import "./menu_drawer.scss";
+import SubjectIcon from "@material-ui/icons/Subject";
+import DvrIcon from "@material-ui/icons/Dvr";
+import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
+import NoteIcon from "@material-ui/icons/Note";
+import DescriptionIcon from "@material-ui/icons/Description";
+import AssignmentIcon from "@material-ui/icons/Assignment";
+import UndoIcon from "@material-ui/icons/Undo";
+import TransformIcon from "@material-ui/icons/Transform";
 import clsx from "clsx";
-=======
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import PersonIcon from '@material-ui/icons/Person';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import NewReleasesIcon from '@material-ui/icons/NewReleases';
-import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
-import CategoryIcon from '@material-ui/icons/Category';
-import LocationCityIcon from '@material-ui/icons/LocationCity';
-import LanguageIcon from '@material-ui/icons/Language';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import ScoreIcon from '@material-ui/icons/Score';
-import StyleIcon from '@material-ui/icons/Style';
-import WcIcon from '@material-ui/icons/Wc';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import TimelineIcon from '@material-ui/icons/Timeline';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
-import BuildIcon from '@material-ui/icons/Build';
-import CollectionsBookmarkIcon from '@material-ui/icons/CollectionsBookmark';
-import HomeIcon from '@material-ui/icons/Home';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import PeopleIcon from '@material-ui/icons/People';
-import SwapHorizIcon from '@material-ui/icons/SwapHoriz';
-import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
-import TocIcon from '@material-ui/icons/Toc';
-import RestorePageIcon from '@material-ui/icons/RestorePage';
-import ReceiptIcon from '@material-ui/icons/Receipt';
-import ListAltIcon from '@material-ui/icons/ListAlt';
-import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
-import SubjectIcon from '@material-ui/icons/Subject';
-import DvrIcon from '@material-ui/icons/Dvr';
-import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
-import NoteIcon from '@material-ui/icons/Note';
-import DescriptionIcon from '@material-ui/icons/Description';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import UndoIcon from '@material-ui/icons/Undo';
-import TransformIcon from '@material-ui/icons/Transform';
-import './menu_drawer.scss';
->>>>>>> 0e46df5449748b25b0dd855e5dd311954f68754e
+import "./menu_drawer.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -123,11 +76,13 @@ export default function NestedList(props) {
     setOpen(!open);
     props.setSelectedMenu(e, "Masters");
   };
-  const handleClickTrans = () => {
+  const handleClickTrans = (e) => {
     setOpenTrans(!openTrans);
+    props.setSelectedMenu(e, "Transactions");
   };
-  const handleClickVoucher = () => {
+  const handleClickVoucher = (e) => {
     setOpenVoucher(!openVoucher);
+    props.setSelectedMenu(e, "Vouchers");
   };
 
   return (
@@ -136,8 +91,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Dashboard")}
         className={clsx("list-item", {
-          "list-item-active":
-            props.selectedMenu === "Dashboard" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Dashboard",
         })}
       >
         <ListItemIcon
@@ -160,8 +114,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Customers")}
         className={clsx("list-item", {
-          "list-item-active":
-            props.selectedMenu === "Customers" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Customers",
         })}
       >
         <ListItemIcon
@@ -184,8 +137,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Vendors")}
         className={clsx("list-item", {
-          "list-item-active":
-            props.selectedMenu === "Vendors" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Vendors",
         })}
       >
         <ListItemIcon
@@ -208,8 +160,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Items")}
         className={clsx("list-item", {
-          "list-item-active":
-            props.selectedMenu === "Items" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Items",
         })}
       >
         <ListItemIcon
@@ -232,8 +183,7 @@ export default function NestedList(props) {
         button
         onClick={handleClick}
         className={clsx("list-item", {
-          "list-item-active":
-            props.selectedMenu === "Masters" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Masters",
         })}
       >
         <ListItemIcon
@@ -251,7 +201,19 @@ export default function NestedList(props) {
             "list-min": props.isDrawerMin,
           })}
         />
-        {open ? <ExpandMore /> : <NavigateNextIcon />}
+        {open ? (
+          <ExpandMore
+            className={clsx("expend-icon", {
+              "expend-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        ) : (
+          <NavigateNextIcon
+            className={clsx("shrink-icon", {
+              "shrink-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        )}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
@@ -259,8 +221,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Bill Sundries")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Bill Sundries" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Bill Sundries",
             })}
           >
             <ListItemIcon
@@ -283,8 +244,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Brands")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Brands" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Brands",
             })}
           >
             <ListItemIcon
@@ -307,8 +267,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Category")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Category" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Category",
             })}
           >
             <ListItemIcon
@@ -330,8 +289,7 @@ export default function NestedList(props) {
           <ListItem
             buttononClick={(e) => props.setSelectedMenu(e, "Cities")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Cities" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Cities",
             })}
           >
             <ListItemIcon
@@ -354,8 +312,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Countries")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Countries" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Countries",
             })}
           >
             <ListItemIcon
@@ -378,8 +335,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Currencies")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Currencies" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Currencies",
             })}
           >
             <ListItemIcon
@@ -402,8 +358,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "GST Treatments")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "GST Treatments" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "GST Treatments",
             })}
           >
             <ListItemIcon
@@ -426,8 +381,7 @@ export default function NestedList(props) {
             button
             conClick={(e) => props.setSelectedMenu(e, "Item Groups")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Item Groups" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Item Groups",
             })}
           >
             <ListItemIcon
@@ -450,8 +404,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Manufacturers")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Manufacturers" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Manufacturers",
             })}
           >
             <ListItemIcon
@@ -474,8 +427,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Payment Terms")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Payment Terms" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Payment Terms",
             })}
           >
             <ListItemIcon
@@ -498,8 +450,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Salutations")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Salutations" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Salutations",
             })}
           >
             <ListItemIcon
@@ -522,8 +473,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "States")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "States" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "States",
             })}
           >
             <ListItemIcon
@@ -546,8 +496,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Taxes")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Taxes" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Taxes",
             })}
           >
             <ListItemIcon
@@ -570,8 +519,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Tax Preference")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Tax Preference" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Tax Preference",
             })}
           >
             <ListItemIcon
@@ -594,8 +542,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Units")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Units" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Units",
             })}
           >
             <ListItemIcon
@@ -618,8 +565,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Voucher Types")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Voucher Types" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Voucher Types",
             })}
           >
             <ListItemIcon
@@ -642,8 +588,7 @@ export default function NestedList(props) {
             button
             onClick={(e) => props.setSelectedMenu(e, "Warehouses")}
             className={clsx(classes.nested, "list-item", {
-              "list-item-active":
-                props.selectedMenu === "Warehouses" && !props.isDrawerMin,
+              "list-item-active": props.selectedMenu === "Warehouses",
             })}
           >
             <ListItemIcon
@@ -668,8 +613,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Organizations")}
         className={clsx(classes.nested, "list-item", {
-          "list-item-active":
-            props.selectedMenu === "Organizations" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Organizations",
         })}
       >
         <ListItemIcon
@@ -692,8 +636,7 @@ export default function NestedList(props) {
         button
         onClick={(e) => props.setSelectedMenu(e, "Users")}
         className={clsx(classes.nested, "list-item", {
-          "list-item-active":
-            props.selectedMenu === "Users" && !props.isDrawerMin,
+          "list-item-active": props.selectedMenu === "Users",
         })}
       >
         <ListItemIcon
@@ -712,109 +655,407 @@ export default function NestedList(props) {
           })}
         />
       </ListItem>
-      <ListItem button onClick={handleClickTrans}>
-        <ListItemIcon>
+      <ListItem
+        button
+        onClick={handleClickTrans}
+        className={clsx("list-item", {
+          "list-item-active": props.selectedMenu === "Transactions",
+        })}
+      >
+        <ListItemIcon
+          onClick={(e) => props.setSelectedMenu(e, "Transactions")}
+          className={clsx("sidenav-icon", {
+            "sidenav-icon-active": props.selectedMenu === "Transactions",
+          })}
+        >
           <SwapHorizIcon />
         </ListItemIcon>
-        <ListItemText primary="Transactions" />
-        {openTrans ? <ExpandMore /> : <NavigateNextIcon />}
+        <ListItemText
+          primary="Transactions"
+          onClick={(e) => props.setSelectedMenu(e, "Transactions")}
+          className={clsx("listItemText", {
+            "list-min": props.isDrawerMin,
+          })}
+        />
+        {openTrans ? (
+          <ExpandMore
+            className={clsx("expend-icon", {
+              "expend-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        ) : (
+          <NavigateNextIcon
+            className={clsx("shrink-icon", {
+              "shrink-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        )}
       </ListItem>
       <Collapse in={openTrans} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Purchase Refund")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Purchase Refund",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Refund")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Purchase Refund",
+              })}
+            >
               <AssignmentReturnedIcon />
             </ListItemIcon>
-            <ListItemText primary="Purchase Refund" />
+            <ListItemText
+              primary="Purchase Refund"
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Refund")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Purchase Payment")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Purchase Payment",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Payment")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active":
+                  props.selectedMenu === "Purchase Payment",
+              })}
+            >
               <CreditCardIcon />
             </ListItemIcon>
-            <ListItemText primary="Purchase Payment" />
+            <ListItemText
+              primary="Purchase Payment"
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Payment")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Sales Recipt")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Sales Recipt",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Sales Recipt")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Sales Recipt",
+              })}
+            >
               <TocIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Recipt" />
+            <ListItemText
+              primary="Sales Recipt"
+              onClick={(e) => props.setSelectedMenu(e, "Sales Recipt")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Sales Refund")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Sales Refund",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Sales Refund")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Sales Refund",
+              })}
+            >
               <RestorePageIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Refund" />
+            <ListItemText
+              primary="Sales Refund"
+              onClick={(e) => props.setSelectedMenu(e, "Sales Refund")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
         </List>
       </Collapse>
-      <ListItem button onClick={handleClickVoucher}>
-        <ListItemIcon>
+      <ListItem
+        button
+        onClick={handleClickVoucher}
+        className={clsx("list-item", {
+          "list-item-active": props.selectedMenu === "Vouchers",
+        })}
+      >
+        <ListItemIcon
+          onClick={(e) => props.setSelectedMenu(e, "Vouchers")}
+          className={clsx("sidenav-icon", {
+            "sidenav-icon-active": props.selectedMenu === "Vouchers",
+          })}
+        >
           <ReceiptIcon />
         </ListItemIcon>
-        <ListItemText primary="Vouchers" />
-        {openVoucher ? <ExpandMore /> : <NavigateNextIcon />}
+        <ListItemText
+          primary="Vouchers"
+          onClick={(e) => props.setSelectedMenu(e, "Vouchers")}
+          className={clsx("listItemText", {
+            "list-min": props.isDrawerMin,
+          })}
+        />
+        {openVoucher ? (
+          <ExpandMore
+            className={clsx("expend-icon", {
+              "expend-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        ) : (
+          <NavigateNextIcon
+            className={clsx("shrink-icon", {
+              "shrink-icon-inactive": props.isDrawerMin,
+            })}
+          />
+        )}
       </ListItem>
       <Collapse in={openVoucher} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Delivery Note")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Delivery Note",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Delivery Note")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Delivery Note",
+              })}
+            >
               <TocIcon />
             </ListItemIcon>
-            <ListItemText primary="Delivery Note" />
+            <ListItemText
+              primary="Delivery Note"
+              onClick={(e) => props.setSelectedMenu(e, "Delivery Note")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Indent Order")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Indent Order",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Indent Order")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Indent Order",
+              })}
+            >
               <ListAltIcon />
             </ListItemIcon>
-            <ListItemText primary="Indent Order" />
+            <ListItemText
+              primary="Indent Order"
+              onClick={(e) => props.setSelectedMenu(e, "Indent Order")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Purchase Invoice")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Purchase Invoice",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Invoice")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active":
+                  props.selectedMenu === "Purchase Invoice",
+              })}
+            >
               <SubjectIcon />
             </ListItemIcon>
-            <ListItemText primary="Purchase Invoice" />
+            <ListItemText
+              primary="Purchase Invoice"
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Invoice")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Purchase Order")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Purchase Order",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Order")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Purchase Order",
+              })}
+            >
               <DvrIcon />
             </ListItemIcon>
-            <ListItemText primary="Purchase Order" />
+            <ListItemText
+              primary="Purchase Order"
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Order")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Purchase Return")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Purchase Return",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Return")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Purchase Return",
+              })}
+            >
               <AssignmentReturnIcon />
             </ListItemIcon>
-            <ListItemText primary="Purchase Return" />
+            <ListItemText
+              primary="Purchase Return"
+              onClick={(e) => props.setSelectedMenu(e, "Purchase Return")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Recipt Note")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Recipt Note",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Recipt Note")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Recipt Note",
+              })}
+            >
               <NoteIcon />
             </ListItemIcon>
-            <ListItemText primary="Recipt Note" />
+            <ListItemText
+              primary="Recipt Note"
+              onClick={(e) => props.setSelectedMenu(e, "Recipt Note")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Sales Invoice")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Sales Invoice",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Sales Invoice")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Sales Invoice",
+              })}
+            >
               <DescriptionIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Invoice" />
+            <ListItemText
+              primary="Sales Invoice"
+              onClick={(e) => props.setSelectedMenu(e, "Sales Invoice")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Sales Order")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Sales Order",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Sales Order")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Sales Order",
+              })}
+            >
               <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Order" />
+            <ListItemText
+              primary="Sales Order"
+              onClick={(e) => props.setSelectedMenu(e, "Sales Order")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Sales Return")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Sales Return",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Sales Return")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Sales Return",
+              })}
+            >
               <UndoIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Return" />
+            <ListItemText
+              primary="Sales Return"
+              onClick={(e) => props.setSelectedMenu(e, "Sales Return")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
+          <ListItem
+            button
+            onClick={(e) => props.setSelectedMenu(e, "Stock Transfer")}
+            className={clsx(classes.nested, "list-item", {
+              "list-item-active": props.selectedMenu === "Stock Transfer",
+            })}
+          >
+            <ListItemIcon
+              onClick={(e) => props.setSelectedMenu(e, "Stock Transfer")}
+              className={clsx("sidenav-icon", {
+                "sidenav-icon-active": props.selectedMenu === "Stock Transfer",
+              })}
+            >
               <TransformIcon />
             </ListItemIcon>
-            <ListItemText primary="Stock Transfer" />
+            <ListItemText
+              primary="Stock Transfer"
+              onClick={(e) => props.setSelectedMenu(e, "Stock Transfer")}
+              className={clsx("listItemText", {
+                "list-min": props.isDrawerMin,
+              })}
+            />
           </ListItem>
         </List>
       </Collapse>

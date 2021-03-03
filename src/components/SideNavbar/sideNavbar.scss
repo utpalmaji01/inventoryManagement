@@ -5,7 +5,7 @@
 // }
 
 .MuiDrawer-paperAnchorDockedLeft {
-    margin-top: 51px;
+    margin-top: 52px;
     padding-top: 5px;
     @media screen and (max-width: $medium) {
       margin-top: 0;
@@ -18,20 +18,11 @@
   }
   
   
-  .sideNav:hover .MuiDrawer-paperAnchorDockedLeft {
-    border-right: 1px solid  black !important;
-  }
-  
   .sideNav-active .MuiDrawer-paperAnchorDockedLeft {
     border-right: 1px solid  black !important;
-    // @media screen and (max-width: $break-xsmall) {
-    //   border-right: none !important;
-    // }
-  }
-  
-  .sideNav:hover .list-min {
-    display: block;
-  }
+    
+    }
+    
   
   .MuiDrawer-paper {
     @media screen and (max-width: $medium) {
@@ -64,7 +55,7 @@
   
   .list-item {
     height: 50px !important;
-    padding: 0 20px !important;
+    padding: 0 10px !important;
     border-radius: 0 50px 50px 0 !important;
     &:hover {
       background-color: aqua !important;
@@ -86,3 +77,5 @@
   .list-min {
     display: none;
   }
+
+

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header.jsx";
 import SideNavbar from "../../components/SideNavbar/SideNavbar.jsx";
+import SimpleCard from "../../components/welcome_card/welcome.jsx";
 import "./dashBoard.scss";
 const DashBoard = () => {
   const [isDrawerMin, setIsDrawerMin] = useState(true);
@@ -24,6 +25,9 @@ const DashBoard = () => {
             selectedMenu={selectedMenu}
             setSelectedMenu={setMenu}
           />
+        </div>
+        <div className="dashboard-first-card">
+        <SimpleCard />
         </div>
       </div>
     </div>

@@ -3,7 +3,8 @@
 .globalsearch-bar {
   background-color: $color-white;
   margin: 6px 10px !important;
-  border-radius: 10px;
+  border-radius: 5px;
+  width: 45%;
   @media screen and (max-width: $xsmall) {
     width: 40%;
   }

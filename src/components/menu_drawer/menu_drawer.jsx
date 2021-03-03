@@ -38,7 +38,9 @@ import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import TocIcon from '@material-ui/icons/Toc';
 import RestorePageIcon from '@material-ui/icons/RestorePage';
-
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ListAltIcon from '@material-ui/icons/ListAlt';
+import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
 import './menu_drawer.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -267,30 +269,30 @@ export default function NestedList() {
           </Collapse>
           <ListItem button onClick={handleClickVoucher}>
         <ListItemIcon>
-          <SwapHorizIcon />
+          <ReceiptIcon />
         </ListItemIcon>
-        <ListItemText primary="Transactions" />
+        <ListItemText primary="Vouchers" />
         {openVoucher ? <ExpandMore /> : <NavigateNextIcon /> }
       </ListItem>
       <Collapse in={openVoucher} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <AssignmentReturnedIcon />
-            </ListItemIcon>
-            <ListItemText primary="Purchase Refund" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <CreditCardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Purchase Payment" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
               <TocIcon />
             </ListItemIcon>
-            <ListItemText primary="Sales Recipt" />
+            <ListItemText primary="Delivery Note" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <ListAltIcon />
+            </ListItemIcon>
+            <ListItemText primary="Indent Order" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <ViewHeadlineIcon />
+            </ListItemIcon>
+            <ListItemText primary="Purchase Invoice" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>

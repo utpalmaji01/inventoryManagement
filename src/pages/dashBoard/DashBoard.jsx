@@ -5,7 +5,7 @@ import SimpleCard from "../../components/welcome_card/welcome.jsx";
 import "./dashBoard.scss";
 const DashBoard = () => {
   const [isDrawerMin, setIsDrawerMin] = useState(true);
-  const [selectedMenu, setSelectedMenu] = useState("Notes");
+  const [selectedMenu, setSelectedMenu] = useState("Dashboard");
   const setMenu = (value) => {
     setSelectedMenu(value);
   };

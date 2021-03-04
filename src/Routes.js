@@ -13,7 +13,7 @@ export default class Routes extends Component {
             <Redirect to="/dash-board" />
           </Route>
           <Route exact path="/dash-board" component={DashBoard} />
-          <Route exact path="/customers" component={Customers} />
+          <Route exact path="/dashBoard/Customers" component={Customers} />
 
         </Switch>
       </Router>

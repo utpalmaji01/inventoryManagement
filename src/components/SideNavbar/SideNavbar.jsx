@@ -15,14 +15,14 @@ import {
 } from "@material-ui/icons";
 import NestedList from '../menu_drawer/menu_drawer.jsx';
 import clsx from "clsx";
-// import history from "../History";
+import history from "../../History.js";
 import "./sideNavbar.scss";
 
 export default function SideNavBar(props) {
-  const selectedMenu = (e, currentMenu) => {
+  const setSelectedMenu = (e, currentMenu) => {
     e.preventDefault();
     props.setSelectedMenu(currentMenu);
-    // history.push("/dashBoard/"+currentMenu);
+    history.push("/dashBoard/"+currentMenu);
   };
   return (
     <>
@@ -33,7 +33,7 @@ export default function SideNavBar(props) {
           "sideNav-active": !props.isDrawerMin,
         })}
       >
-        <List className="sideNav-list">
+        {/* <List className="sideNav-list"> */}
           {/* <ListItem
             button
             onClick={(e) => selectedMenu(e, "Notes")}
@@ -57,9 +57,9 @@ export default function SideNavBar(props) {
               })}
             />
           </ListItem> */}
-          <NestedList />
+          <NestedList setSelectedMenu={setSelectedMenu} isDrawerMin={props.isDrawerMin} selectedMenu={props.selectedMenu} />
           
-        </List>
+        {/* </List> */}
       </Drawer>
     </>
   );
